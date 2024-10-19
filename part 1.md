@@ -1,3 +1,4 @@
+```
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -131,10 +132,12 @@ int main(){
     printf("%d\n",circle->data);
     while(bl!=circle){             //遍历
         printf("%d\n",bl->data);
-        bl=bl->next；
+        bl=bl->next;
 
     }
 
+}
+```
 
 **输出结果为**
 
