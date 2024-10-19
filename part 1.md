@@ -1,4 +1,3 @@
-```
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -72,56 +71,53 @@ int D(li *l,int LOCATION){     //删除数据，删除第LOCATION个节点数据
     free(q);      //释放内存
 }
 
-
 int main(){
     li *circle=init();
-  
 
     printf("Enter the operation that you choose(T,H,D,C), C to end:");
     char a,t='T',d='D',h='H',c='C';
     scanf("%c",&a);
     do{
 
-        if(a==t){    //操作T，输入待操作的三个数
+    if(a==t){    //操作T，输入待操作的三个数
             int m,n,e;
-  
-            scanf("%d",&m);
 
-            scanf("%d",&n);   
+    scanf("%d",&m);
 
-            scanf("%d",&e);
+    scanf("%d",&n);
+
+    scanf("%d",&e);
             T(circle,m);
             T(circle,n);
             T(circle,e);
-   
 
-        }else{
+    }else{
             if(a==h){       //操作H，输入待操作的三个数
             int m,n,e;
 
-            scanf("%d",&m);
+    scanf("%d",&m);
 
-            scanf("%d",&n);   
+    scanf("%d",&n);
 
-            scanf("%d",&e);
+    scanf("%d",&e);
             H(circle,m);
             H(circle,n);
             H(circle,e);
-   
-            }else{
+
+    }else{
                 if(a==d){    //操作D，输入待操作的1个数
                     int b;
 
-                    scanf("%d",&b);
+    scanf("%d",&b);
                     D(circle,b);
-  
-                }else{
+
+    }else{
                     if(a==c){     //操作C，结束操作
                         break;
                     }else{
                     printf("Please enter the right operation\n");
-  
-                    }
+
+    }
                 }
             }
         }
@@ -135,9 +131,44 @@ int main(){
     printf("%d\n",circle->data);
     while(bl!=circle){             //遍历
         printf("%d\n",bl->data);
-        bl=bl->next;
+        bl=bl->next；
+
     }
 
-}
 
-```
+**输出结果为**
+
+1
+1
+1
+1
+1
+2
+1
+1
+2
+2
+1
+2
+1
+2
+1
+1
+2
+3
+1
+1
+1
+1
+1
+2
+2
+2
+1
+2
+2
+1
+1
+2
+2
+2
