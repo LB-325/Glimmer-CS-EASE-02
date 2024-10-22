@@ -11,6 +11,10 @@ typedef struct li{
 
 li* init(){       //初始化
     li *h=(li*)malloc(sizeof(li));  //函数分配内存
+    if(h==NULL){
+    printf("内存分配失败\n");
+    return NULL;
+}
     h->data=1;
     h->next=NULL;
     return h;
@@ -26,6 +30,10 @@ li* getl(li *l){    //得到尾节点地址
 
 void H(li **l,in e){       //头插法，在头数据前插入一个新数据，*l是第一个数据，e是插入的数据元素
     li *p=(li*)malloc(sizeof(li));
+    if(p==NULL){
+    printf("内存分配失败\n");
+    return;
+}
     p->data=e;
     p->next=*l;
     *l=p;
@@ -37,6 +45,10 @@ li* T(li *l,in e){     //尾插法，在链表最后插入数据
     li *o=l;
     tail=getl(o);
     li *p=(li*)malloc(sizeof(li));
+    if(p==NULL){
+    printf("内存分配失败\n");
+    return NULL;
+}
     p->data=e;
     tail->next=p;
     p->next=NULL;
@@ -136,6 +148,7 @@ int main(){
     }
 
 }
+
 
 ```
 
