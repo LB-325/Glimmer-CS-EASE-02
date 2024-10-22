@@ -10,6 +10,10 @@ typedef struct stack{
 
 stack* init(){     //初始化 
     stack *s=(stack*)malloc(sizeof(stack));
+    if(s==NULL){
+        printf("分配内存失败\n");
+        return NULL;
+    }
     s->data=0;
     s->next=NULL;
     return s;
@@ -27,6 +31,10 @@ int judge(stack *s){          //判断是否为空栈
 
 int push(stack *s,in e){       //进栈
     stack *p=(stack*)malloc(sizeof(stack));
+    if(p==NULL){
+        printf("分配内存失败\n");
+        return 0;
+    }
     p->data=e;
     p->next=s->next;
     s->next=p;
