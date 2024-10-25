@@ -64,7 +64,7 @@ void list(li *l){        //遍历，将链表中数据全部输出一次
     printf("%d\n",p->data);
     p=p->next;
     while(p!=l){
-        printf("%d\n",p->data);
+        printf("%d ",p->data);
         p=p->next;
     }
     printf("\n");
@@ -106,6 +106,17 @@ int length(li *l){       //测长度
     }
     return i;
 
+}
+
+void freeall(li *l){
+    li *q=l->next;
+    li *p;
+    while(q!=l){
+        p=q;
+        q=q->next;
+        free(p);   
+    }
+    free(l);
 }
 
 
@@ -152,56 +163,26 @@ int main(){
     H(&circle,1);
     H(&circle,1);
 
-    int a,b,c,m,n,i,len;
-    len=length(circle);      //得出总长度len
+    int a,b,c,m,n,i;
+
     li *k=circle;
     for(i=1;k->data!=3;i++){      //得出3节点所在位置i
         k=k->next;
     }
 
     li *k0=k;
-    for(m=1;len>0;m++){
-        if(m<len){
+    for(m=1;m<=34;m++){
         n=1;
-        while(n<m){       //找到第m轮第m个
+        while(n<m){          //找到第m轮第m个
             n++;
             k=k->next;
-            i++;
-        }
-        if(i>len){          //控制i不超过总长度，i表示要删除的第m轮第m个节点在链表中的位置（第i个）
-            i=i-len;
         }
         printf("%d",k->data);
         k=k->next;
-        k0=k;
-        D(&circle,i);
-        len--;
-        }
-           else{
-            a=m%len;
-            if(a==0){
-                a=len;
-            }
-            n=1;
-            while(n<a){       //找到第m轮第m个
-              n++;
-              k=k->next;
-              i++;
-            }
-            if(i>len){          //控制i不超过总长度，i表示要删除的第m轮第m个节点在链表中的位置（第i个）
-              i=i-len;
-            }
-            printf("%d",k->data);
-            k=k->next;
-            k0=k;
-            D(&circle,i);
-            len--;
-           } 
+        D(&k0,n);
+        k0=k;       //更换头节点
     }
-
 }
-
-
 ```
 
 ---
